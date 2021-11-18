@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "slack-cloud-sdk/": "https://slack.com/cloud/static/common/sdk@0.7.2/"
+  }
+}
