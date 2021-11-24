@@ -1,0 +1,32 @@
+{
+    "manifest": {
+        "command": {
+            "default": "deno --unstable run --quiet --import-map=import_map.json project.ts --manifest"
+        }
+    },
+    "package": {
+        "command": {
+            "default": "deno --unstable bundle --quiet --import-map=import_map.json project.ts"
+        }
+    },
+    "triggers": {
+        "command": {
+            "default": "deno --unstable run --quiet --import-map=import_map.json project.ts --triggers"
+        }
+    },
+    "run": {
+        "command": {
+            "default": "deno run --quiet --import-map=import_map.json --unstable --no-check --allow-net project.ts"
+        },
+        "watcher": {
+            "filter_regex": "^.*\\.ts$",
+            "paths": [
+                "./workflows",
+                "./tables",
+                "./functions",
+                "./triggers",
+                "./project.ts"
+            ]
+        }
+    }
+}
