@@ -6,21 +6,15 @@ export const ReverseString = DefineFunction(
     title: "Reverse",
     description: "Takes a string and reverses it",
     input_parameters: {
-      required: ["stringToReverse"],
-      properties: {
-        stringToReverse: {
-          type: Schema.types.string,
-          description: "The string to reverse",
-        },
+      stringToReverse: {
+        type: Schema.types.string,
+        description: "The string to reverse",
       },
     },
     output_parameters: {
-      required: ["reverseString"],
-      properties: {
-        reverseString: {
-          type: Schema.types.string,
-          description: "The string in reverse",
-        },
+      reverseString: {
+        type: Schema.types.string,
+        description: "The string in reverse",
       },
     },
   },
