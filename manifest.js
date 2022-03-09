@@ -5,6 +5,8 @@ export default {
   "display_information": {
     "name": "reverse"
   },
+  // Once Manifest APIs support this, we'll add it
+  // "runtime_environment": "slack",
   // The CLI should still read this and update the icon, then remove if from what's sent to manifest APIs
   // We could have the deno-slack-builder make sure this file is included in the `output` path if helpful
   "icon": "assets/icon.png",
@@ -32,8 +34,6 @@ export default {
       "title": "Reverse",
       "description": "Takes a string and reverses it",
       "source_file": "functions/reverse.ts",
-      // Once Manifest APIs support this, we'll add it
-      // "runtime_environment": "slack",
       "input_parameters": {
         "required": [
           "stringToReverse"
