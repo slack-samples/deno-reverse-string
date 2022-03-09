@@ -7,6 +7,7 @@ export default {
   },
   // Once Manifest APIs support this, we'll add it
   // "runtime_environment": "slack",
+  "runtime": "deno1.x",
   // The CLI should still read this and update the icon, then remove if from what's sent to manifest APIs
   // We could have the deno-slack-builder make sure this file is included in the `output` path if helpful
   "icon": "assets/icon.png",
