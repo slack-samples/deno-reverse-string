@@ -29,10 +29,8 @@ const ReverseFunction = DefineFunction("reverse", {
 });
 
 export default Manifest({
-  "display_information": {
-    "name": "reverse",
-    "short_description": "Reverse a string",
-  },
+  "name": "reverse",
+  "description": "Reverse a string",
   // Once Manifest APIs support this, we'll add it
   // "runtime_environment": "slack",
   "runtime": "deno1.x",
@@ -40,6 +38,6 @@ export default Manifest({
   // We could have the deno-slack-builder make sure this file is included in the `output` path if helpful
   "icon": "assets/icon.png",
   "functions": [ReverseFunction],
-  "outgoing_domains": [],
+  "outgoingDomains": [],
   "botScopes": ["commands", "chat:write", "chat:write.public"],
 });
