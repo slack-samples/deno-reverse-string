@@ -1,11 +1,11 @@
 {
   "manifest": {
-    "command": {
+    "exec": {
       "default": "deno run -q --unstable --allow-read https://deno.land/x/deno_slack_builder@0.0.5/mod.ts --manifest"
     }
   },
   "package": {
-    "command": {
+    "exec": {
       "default": "deno run -q --unstable --allow-read --allow-write https://deno.land/x/deno_slack_builder@0.0.5/mod.ts"
     }
   }
