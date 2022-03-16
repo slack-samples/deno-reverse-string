@@ -1,9 +1,11 @@
+import { DefineFunction } from "slack-cloud-sdk/mod.ts";
+
 export default {
   "_metadata": {
-    "major_version": 2
+    "major_version": 2,
   },
   "display_information": {
-    "name": "reverse"
+    "name": "reverse",
   },
   // Once Manifest APIs support this, we'll add it
   // "runtime_environment": "slack",
@@ -15,20 +17,20 @@ export default {
     "app_home": {
       "home_tab_enabled": false,
       "messages_tab_enabled": false,
-      "messages_tab_read_only_enabled": false
+      "messages_tab_read_only_enabled": false,
     },
     "bot_user": {
-      "display_name": "reverse"
-    }
+      "display_name": "reverse",
+    },
   },
   "oauth_config": {
     "scopes": {
       "bot": [
         "commands",
         "chat:write",
-        "chat:write.public"
-      ]
-    }
+        "chat:write.public",
+      ],
+    },
   },
   "functions": {
     "reverse": {
@@ -37,27 +39,27 @@ export default {
       "source_file": "functions/reverse.ts",
       "input_parameters": {
         "required": [
-          "stringToReverse"
+          "stringToReverse",
         ],
         "properties": {
           "stringToReverse": {
             "type": "string",
-            "description": "The string to reverse"
-          }
-        }
+            "description": "The string to reverse",
+          },
+        },
       },
       "output_parameters": {
         "required": [
-          "reverseString"
+          "reverseString",
         ],
         "properties": {
           "reverseString": {
             "type": "string",
-            "description": "The string in reverse"
-          }
-        }
-      }
-    }
+            "description": "The string in reverse",
+          },
+        },
+      },
+    },
   },
-  "outgoing_domains": []
-}
+  "outgoing_domains": [],
+};
