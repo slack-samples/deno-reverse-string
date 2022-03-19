@@ -1,4 +1,4 @@
 dist
 package
-.slack/
+.slack/apps.json
 .DS_Store
