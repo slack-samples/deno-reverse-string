@@ -1,0 +1,12 @@
+{
+  "manifest": {
+    "script": {
+      "default": "deno run -q --unstable --import-map=import_map.json --allow-read --allow-net https://deno.land/x/deno_slack_builder@0.0.5/mod.ts --manifest"
+    }
+  },
+  "package": {
+    "script": {
+      "default": "deno run -q --unstable --allow-read --allow-write https://deno.land/x/deno_slack_builder@0.0.5/mod.ts"
+    }
+  }
+}
