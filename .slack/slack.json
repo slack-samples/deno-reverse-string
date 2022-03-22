@@ -6,7 +6,7 @@
   },
   "package": {
     "script": {
-      "default": "deno run -q --unstable --allow-read --allow-write https://deno.land/x/deno_slack_builder@0.0.5/mod.ts"
+      "default": "deno run -q --unstable --allow-read --allow-write --allow-net https://deno.land/x/deno_slack_builder@0.0.5/mod.ts"
     }
   }
 }
