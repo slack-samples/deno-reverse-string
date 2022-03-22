@@ -1,4 +1,4 @@
-export default async ({ inputs, env }: any) => {
+const reverse = async ({ inputs, env }: any) => {
   console.log(`reversing ${inputs.stringToReverse}.`);
   console.log(`SLACK_API_URL=${env["SLACK_API_URL"]}`);
 
@@ -7,3 +7,5 @@ export default async ({ inputs, env }: any) => {
     outputs: { reverseString },
   };
 };
+
+export default reverse;
