@@ -11,6 +11,7 @@ export default {
   // The CLI should still read this and update the icon, then remove if from what's sent to manifest APIs
   // We could have the deno-slack-builder make sure this file is included in the `output` path if helpful
   "icon": "assets/icon.png",
+  "type": "hosted",
   "features": {
     "app_home": {
       "home_tab_enabled": false,
