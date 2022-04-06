@@ -11,11 +11,11 @@
   },
   "run": {
     "script": {
-      "default": "deno run -q --unstable --allow-write --allow-read --allow-net https://deno.land/x/deno_slack_runtime@0.0.2/mod.ts"
+      "default": "deno run -q --unstable --allow-read --allow-net https://deno.land/x/deno_slack_runtime@0.0.2/mod.ts"
     },
     "watcher": {
-      "filter_regex": "^.*\\.ts$",
-      "paths": [ "./manifest.ts" ]
+      "filter_regex": "^manifest\\.(ts|js|json)$",
+      "paths": [ "." ]
     }
   }
 }
