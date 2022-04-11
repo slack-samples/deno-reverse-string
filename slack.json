@@ -10,7 +10,6 @@
     "test": "deno test"
   },
   "config": {
-    "sdk-managed-connection-enabled": false,
     "watch": {
       "filter-regex": "^manifest\\.(ts|js|json)$",
       "paths": [
