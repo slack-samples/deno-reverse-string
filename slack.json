@@ -1,19 +1,5 @@
 {
-  "runtime": "deno",
   "hooks": {
-    "build": "deno run -q --unstable --import-map=import_map.json --allow-read --allow-write --allow-net https://deno.land/x/deno_slack_builder@0.0.5/mod.ts",
-    "get-manifest": "deno run -q --unstable --import-map=import_map.json --allow-read --allow-net https://deno.land/x/deno_slack_builder@0.0.5/mod.ts --manifest",
-    "start": "deno run -q --unstable --import-map=import_map.json --allow-read --allow-net https://deno.land/x/deno_slack_runtime@0.0.3/mod.ts"
-  },
-  "scripts": {
-    "test": "deno test"
-  },
-  "config": {
-    "watch": {
-      "filter-regex": "^manifest\\.(ts|js|json)$",
-      "paths": [
-        "."
-      ]
-    }
+    "get-hooks": "deno run -q --unstable --allow-read --allow-net https://deno.land/x/deno_slack_hooks@0.0.1/mod.ts"
   }
 }
