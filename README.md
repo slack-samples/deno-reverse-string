@@ -3,9 +3,6 @@
 This repo contains a sample project and embedded lightweight SDK of a Typescript
 based project for the new Deno runtime.
 
-This repo contains a sample project and embedded lightweight SDK of a Typescript
-based project for the new Deno runtime.
-
 The main file that handles the generation of your app's manifest is the
 `manifest.ts` file. So far it supports defining `functions`, `types`, and
 `datastores`. To define the runtime logic for functions, the `source_file`
