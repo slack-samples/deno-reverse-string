@@ -1,5 +1,3 @@
 dist
 package
-.slack/apps.json
-triggers/.gitignore
 .DS_Store
