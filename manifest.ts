@@ -1,6 +1,6 @@
 import { DefineFunction, Manifest, Schema } from "deno-slack-sdk/mod.ts";
 
-const ReverseFunction = DefineFunction({
+export const ReverseFunction = DefineFunction({
   callback_id: "reverse",
   title: "Reverse",
   description: "Takes a string and reverses it",
