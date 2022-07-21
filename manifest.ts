@@ -1,6 +1,7 @@
 import {
   DefineFunction,
   DefineWorkflow,
+  DefineDatastore,
   Manifest,
   Schema,
 } from "deno-slack-sdk/mod.ts";
@@ -79,11 +80,31 @@ TestReverseWorkflow.addStep(Schema.slack.functions.SendMessage, {
   message: reverseStep.outputs.reverseString,
 });
 
+const DenoTableDatastore = DefineDatastore({
+  name: "dinos",
+  primary_key: "id",
+  attributes: {
+    id: {
+      type: Schema.types.string,
+    },
+    original_name: {
+      type: Schema.types.string,
+    },
+    dino_name: {
+      type: Schema.types.string,
+    },
+    user_id: {
+      type: Schema.types.string,
+    },
+  },
+});
+
 export default Manifest({
   name: "reverse",
   description: "Reverse a string",
   icon: "assets/default_new_app_icon.png",
   workflows: [TestReverseWorkflow],
+  datastores: [DenoTableDatastore],
   outgoingDomains: [],
   botScopes: ["commands", "chat:write", "chat:write.public"],
 });
