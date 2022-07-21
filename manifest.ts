@@ -1,4 +1,9 @@
-import { DefineFunction, Manifest, Schema } from "deno-slack-sdk/mod.ts";
+import {
+  DefineDatastore,
+  DefineFunction,
+  Manifest,
+  Schema,
+} from "deno-slack-sdk/mod.ts";
 
 export const ReverseFunction = DefineFunction({
   callback_id: "reverse",
@@ -25,11 +30,31 @@ export const ReverseFunction = DefineFunction({
   },
 });
 
+const DenoTableDatastore = DefineDatastore({
+  name: "dinos",
+  primary_key: "id",
+  attributes: {
+    id: {
+      type: Schema.types.string,
+    },
+    original_name: {
+      type: Schema.types.string,
+    },
+    dino_name: {
+      type: Schema.types.string,
+    },
+    user_id: {
+      type: Schema.types.string,
+    },
+  },
+});
+
 export default Manifest({
   name: "reverse",
   description: "Reverse a string",
   icon: "assets/icon.png",
   functions: [ReverseFunction],
+  datastores: [DenoTableDatastore],
   outgoingDomains: [],
   botScopes: ["commands", "chat:write", "chat:write.public"],
 });
