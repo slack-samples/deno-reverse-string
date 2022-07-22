@@ -32,6 +32,13 @@ slack run
 slack deploy
 ```
 
+## Seeing it in action
+After creating your app, you'll need to create a new trigger that will start the workflow.
+
+```bash
+slack triggers create --trigger-def ./trigger.ts
+```
+
 ## Testing
 
 You can write tests for your function, see `functions/reverse_test.ts` for a
