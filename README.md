@@ -39,6 +39,8 @@ After creating your app, you'll need to create a new trigger that will start the
 slack triggers create --trigger-def ./trigger.ts
 ```
 
+This provides a URL that you can now paste into your slack workspace to run the workflow! You can also add the url to the bookmarks bar of a channel!
+
 ## Testing
 
 You can write tests for your function, see `functions/reverse_test.ts` for a
