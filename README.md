@@ -36,7 +36,7 @@ slack deploy
 After creating your app, you'll need to create a new trigger that will start the workflow.
 
 ```bash
-slack triggers create --trigger-def ./trigger.ts
+slack trigger create --trigger-def ./trigger.ts
 ```
 
 This provides a URL that you can now paste into your slack workspace to run the workflow! You can also add the url to the bookmarks bar of a channel!
