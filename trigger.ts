@@ -5,6 +5,11 @@ const trigger: ValidTriggerTypes = {
   name: "Reverse a String",
   description: "Starts the workflow to test reversing a string",
   workflow: "#/workflows/test_reverse",
+  inputs: {
+    interactivity: {
+      value: "{{data.interactivity}}",
+    },
+  },
 };
 
 export default trigger;
