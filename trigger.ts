@@ -9,6 +9,9 @@ const trigger: ValidTriggerTypes = {
     interactivity: {
       value: "{{data.interactivity}}",
     },
+    channel: {
+      value: "{{data.channel_id}}",
+    },
   },
 };
 

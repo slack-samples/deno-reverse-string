@@ -37,14 +37,17 @@ export const TestReverseWorkflow = DefineWorkflow({
   input_parameters: {
     properties: {
       interactivity: {
-        type: "slack#/types/interactivity",
+        type: Schema.slack.types.interactivity,
+      },
+      channel: {
+        type: Schema.slack.types.channel_id,
       },
     },
-    required: [],
+    required: ["interactivity"],
   },
 });
 
-const formData = TestReverseWorkflow.addStep("slack#/functions/send_form", {
+const formData = TestReverseWorkflow.addStep(Schema.slack.functions.OpenForm, {
   title: "Reverse string form",
   submit_label: "Submit form",
   description: "Submit a string to reverse",
@@ -56,13 +59,12 @@ const formData = TestReverseWorkflow.addStep("slack#/functions/send_form", {
         name: "stringInput",
         title: "String input",
         type: Schema.types.string,
-        is_required: true,
       },
       {
         name: "channel",
         title: "Post in",
         type: Schema.slack.types.channel_id,
-        is_required: true,
+        default: TestReverseWorkflow.inputs.channel,
       },
     ],
   },
@@ -72,7 +74,7 @@ const reverseStep = TestReverseWorkflow.addStep(ReverseFunction, {
   stringToReverse: formData.outputs.fields.stringInput,
 });
 
-TestReverseWorkflow.addStep("slack#/functions/send_message", {
+TestReverseWorkflow.addStep(Schema.slack.functions.SendMessage, {
   channel_id: formData.outputs.fields.channel,
   message: reverseStep.outputs.reverseString,
 });
@@ -81,7 +83,6 @@ export default Manifest({
   name: "reverse",
   description: "Reverse a string",
   icon: "assets/icon.png",
-  functions: [ReverseFunction],
   workflows: [TestReverseWorkflow],
   outgoingDomains: [],
   botScopes: ["commands", "chat:write", "chat:write.public"],
