@@ -1,6 +1,6 @@
-import { ValidTriggerTypes } from "deno-slack-api/types.ts";
+import { Trigger } from "deno-slack-api/types.ts";
 
-const trigger: ValidTriggerTypes = {
+const trigger: Trigger = {
   type: "shortcut",
   name: "Reverse a String",
   description: "Starts the workflow to test reversing a string",
