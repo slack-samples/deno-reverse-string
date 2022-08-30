@@ -1,5 +1,29 @@
-import { SlackFunction } from "deno-slack-sdk/mod.ts";
-import { ReverseFunction } from "../manifest.ts";
+import { DefineFunction, Schema, SlackFunction } from "deno-slack-sdk/mod.ts";
+
+export const ReverseFunction = DefineFunction({
+  callback_id: "reverse",
+  title: "Reverse",
+  description: "Takes a string and reverses it",
+  source_file: "functions/reverse.ts",
+  input_parameters: {
+    properties: {
+      stringToReverse: {
+        type: Schema.types.string,
+        description: "The string to reverse",
+      },
+    },
+    required: ["stringToReverse"],
+  },
+  output_parameters: {
+    properties: {
+      reverseString: {
+        type: Schema.types.string,
+        description: "The string in reverse",
+      },
+    },
+    required: ["reverseString"],
+  },
+});
 
 export default SlackFunction(ReverseFunction, ({ inputs, env }) => {
   console.log(`reversing ${inputs.stringToReverse}.`);
