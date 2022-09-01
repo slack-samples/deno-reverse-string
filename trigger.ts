@@ -1,6 +1,7 @@
 import { Trigger } from "deno-slack-api/types.ts";
+import { TestReverseWorkflow } from "./manifest.ts";
 
-const trigger: Trigger = {
+const trigger: Trigger<typeof TestReverseWorkflow.definition> = {
   type: "shortcut",
   name: "Reverse a String",
   description: "Starts the workflow to test reversing a string",
