@@ -82,7 +82,7 @@ TestReverseWorkflow.addStep(Schema.slack.functions.SendMessage, {
 export default Manifest({
   name: "reverse",
   description: "Reverse a string",
-  icon: "assets/icon.png",
+  icon: "assets/default_new_app_icon.png",
   workflows: [TestReverseWorkflow],
   outgoingDomains: [],
   botScopes: ["commands", "chat:write", "chat:write.public"],
