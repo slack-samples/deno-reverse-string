@@ -8,6 +8,7 @@ on:
 
 jobs:
   deno:
+    if: github.repository == 'slack-samples/deno-reverse-string'
     runs-on: ubuntu-latest
 
     steps:
