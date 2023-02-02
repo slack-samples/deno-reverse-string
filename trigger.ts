@@ -7,8 +7,8 @@ const trigger: Trigger<typeof TestReverseWorkflow.definition> = {
   description: "Starts the workflow to test reversing a string",
   workflow: "#/workflows/test_reverse",
   inputs: {
-    interactivity: {
-      value: "{{data.interactivity}}",
+    stringToReverse: {
+      value: "{{data.stringToReverse}}",
     },
     channel: {
       value: "{{data.channel_id}}",
