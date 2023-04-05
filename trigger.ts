@@ -1,4 +1,4 @@
-import { Trigger } from "deno-slack-api/types.ts";
+import { Trigger } from "deno-slack-sdk/types.ts";
 import { TestReverseWorkflow } from "./manifest.ts";
 
 const trigger: Trigger<typeof TestReverseWorkflow.definition> = {
