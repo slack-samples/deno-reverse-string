@@ -22,21 +22,21 @@ export const ReverseFunctionDefinition = DefineFunction({
   },
   output_parameters: {
     properties: {
-      reverseString: {
+      reversedString: {
         type: Schema.types.string,
         description: "The string in reverse",
       },
     },
-    required: ["reverseString"],
+    required: ["reversedString"],
   },
 });
 
 export default SlackFunction(
   ReverseFunctionDefinition,
   ({ inputs }) => {
-    const reverseString = inputs.stringToReverse.split("").reverse().join("");
+    const reversedString = inputs.stringToReverse.split("").reverse().join("");
     return {
-      outputs: { reverseString },
+      outputs: { reversedString },
     };
   },
 );

@@ -52,7 +52,7 @@ const reverseStep = ReverseWorkflow.addStep(ReverseFunctionDefinition, {
 
 ReverseWorkflow.addStep(Schema.slack.functions.SendMessage, {
   channel_id: formData.outputs.fields.channel,
-  message: reverseStep.outputs.reverseString,
+  message: reverseStep.outputs.reversedString,
 });
 
 export default ReverseWorkflow;
