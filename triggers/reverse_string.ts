@@ -5,7 +5,7 @@ import ReverseWorkflow from "../workflows/reverse_string.ts";
  * Triggers determine when workflows are executed. A trigger
  * file describes a scenario in which a workflow should be run,
  * such as a user pressing a button or when a specific event occurs.
- * https://api.slack.com/future/triggers
+ * https://api.slack.com/automation/triggers
  */
 const trigger: Trigger<typeof ReverseWorkflow.definition> = {
   type: "shortcut",
