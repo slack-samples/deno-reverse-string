@@ -1,6 +1,11 @@
 import { DefineWorkflow, Schema } from "deno-slack-sdk/mod.ts";
 import { ReverseFunctionDefinition } from "../functions/reverse.ts";
 
+/**
+ * A workflow is a set of steps that are executed in order.
+ * Each step in a workflow is a function.
+ * https://api.slack.com/automation/workflows
+ */
 const ReverseWorkflow = DefineWorkflow({
   callback_id: "reverse_string",
   title: "Test Reverse Function",
@@ -47,7 +52,7 @@ const reverseStep = ReverseWorkflow.addStep(ReverseFunctionDefinition, {
 
 ReverseWorkflow.addStep(Schema.slack.functions.SendMessage, {
   channel_id: formData.outputs.fields.channel,
-  message: reverseStep.outputs.reverseString,
+  message: reverseStep.outputs.reversedString,
 });
 
 export default ReverseWorkflow;

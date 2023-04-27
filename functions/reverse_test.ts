@@ -7,5 +7,5 @@ const { createContext } = SlackFunctionTester("reverse");
 Deno.test("Reverse string function test", async () => {
   const inputs = { stringToReverse: "foo" };
   const { outputs } = await ReverseFunction(createContext({ inputs }));
-  assertEquals(outputs?.reverseString, "oof");
+  assertEquals(outputs?.reversedString, "oof");
 });
