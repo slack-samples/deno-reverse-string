@@ -2,7 +2,7 @@ import { DefineWorkflow, Manifest, Schema } from "deno-slack-sdk/mod.ts";
 
 export const TestReverseWorkflow = DefineWorkflow({
   callback_id: "test_reverse",
-  title: "Test Reverse Function",
+  title: "Reverse Function",
   description: "test the reverse function",
   input_parameters: {
     properties: {
