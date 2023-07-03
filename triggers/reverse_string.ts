@@ -1,4 +1,5 @@
 import { Trigger } from "deno-slack-sdk/types.ts";
+import { TriggerContextData, TriggerTypes } from "deno-slack-api/mod.ts";
 import ReverseWorkflow from "../workflows/reverse_string.ts";
 
 /**
@@ -8,16 +9,16 @@ import ReverseWorkflow from "../workflows/reverse_string.ts";
  * https://api.slack.com/automation/triggers
  */
 const trigger: Trigger<typeof ReverseWorkflow.definition> = {
-  type: "shortcut",
+  type: TriggerTypes.Shortcut,
   name: "Reverse a string",
   description: "Starts the workflow to reverse a string",
-  workflow: "#/workflows/reverse_string",
+  workflow: `#/workflows/${ReverseWorkflow.definition.callback_id}`,
   inputs: {
     interactivity: {
-      value: "{{data.interactivity}}",
+      value: TriggerContextData.Shortcut.interactivity,
     },
     channel: {
-      value: "{{data.channel_id}}",
+      value: TriggerContextData.Shortcut.channel_id,
     },
   },
 };
